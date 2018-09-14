@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FunWater</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <section>
+        <header class="header">
+            <h1 class="header__heading">FunWater</h1>
+            <nav class="header__nav">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="products.html">Products</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <figure class="slider">
+            <img name="sliderSlide" alt="This is the slider for the page" class="slider">
+            <!-- <script src="scripts/slider.js"></script> -->
+            <script>
+                var i = 0;
+                var images = [];
+                var time = 3000;
+
+                // images[0] = '../img/slide1.jpg';
+                // images[1] = '../img/slide2.jpg';
+                // images[2] = '../img/slide3.jpg';
+                // images[3] = '../img/slide4.jpg';
+
+                images[0] = 'img/slide1.jpg';
+                images[1] = 'img/slide2.jpg';
+                images[2] = 'img/slide3.jpg';
+                images[3] = 'img/slide4.jpg';
+
+                function changeImg() {
+                    document.sliderSlide.src = images[i];
+                    if (i < images.length - 1) {
+                        i++
+                    } else {
+                        i = 0;
+                    }
+
+                    setTimeout("changeImg()", time);
+                }
+
+                window.onload = changeImg();
+            </script>
+        </figure>
+    </section>
+    <section class="aboutParagraph">
+        <h2 class="aboutParagraph__heading">About FunWater...</h2>
+        <p class="aboutParagraph__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="aboutParagraph__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n</p>
+    </section>
+    <section class="shoppingCard">
+        <a href="products.html" class="shoppingCard__CTA">START SHOPPING</a>
+    </section>
+
+    <footer class="footer">
+        <nav class="footer__nav">
+            <ul class="nav__ul--pages">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="products.html">Products</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</li>
+            </ul>
+            <ul class="nav__ul--social">
+                <li>
+                    <img src="img/facebook.svg" alt="This is an icon that links to Facebook">
+                </li>
+                <li>
+                    <img src="img/twitter.svg" alt="This is an icon that links to Twitter">
+                </li>
+                <li>
+                    <img src="img/youtube.svg" alt="This is an icon that links to YouTube">
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

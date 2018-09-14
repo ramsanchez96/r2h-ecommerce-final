@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>you tube</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-1367.000000, -187.000000)">
+            <g id="footer">
+                <g id="social" transform="translate(1367.000000, 75.000000)">
+                    <g id="you-tube" transform="translate(0.000000, 112.000000)">
+                        <g id="Group-3" fill="#1A237E">
+                            <path d="M40,20 C40,31.0456 31.0456,40 20,40 C8.9544,40 0,31.0456 0,20 C0,8.9544 8.9544,0 20,0 C31.0456,0 40,8.9544 40,20" id="Fill-1"></path>
+                        </g>
+                        <path d="M23.7492,19.5596 L23.5716,19.6524 L23.0208,19.9424 L23.0192,19.9412 L17.7924,22.6728 L17.7924,16.4664 L17.7964,16.4684 L17.7924,16.466 L23.7492,19.5592 L23.7484,19.5596 L23.7492,19.5596 Z M25.3256,12 L14.7744,12 C9,12 9,13.6452 9,17.6908 L9,21.6448 C9,25.4924 9.818,27.3352 14.7744,27.3352 L25.3256,27.3352 C29.8032,27.3352 31.1004,26.258 31.1004,21.6448 L31.1004,17.6908 C31.1004,13.4324 30.882,12 25.3256,12 L25.3256,12 Z" id="Fill-4" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

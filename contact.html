@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FunWater</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <section>
+        <header class="header">
+            <h1 class="header__heading">FunWater</h1>
+            <nav class="header__nav">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./products.html">Products</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="formSection">
+        <form action="#" method="GET" name="mainForm" onsubmit="return validateForm()">
+            <h2>Contact Me:</h3>
+                <!-- first name -->
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name">
+                </div>
+
+                <!-- last name -->
+                <div class="formLastName">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+                </div>
+
+                <!-- email -->
+                <div class="formEmail">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+
+                <!-- place of work-->
+                <div class="formWork">
+                    <label for="work">Place of Work:</label>
+                    <input type="text" name="work" id="work" placeholder="Place of Work">
+                </div>
+
+                <!-- comments -->
+                <div>
+                    <label for="comments" class="commentForm">Comments:</label>
+                    <textarea name="comments" id="comments" rows="auto" cols="auto" placeholder="Comments"></textarea>
+                </div>
+
+                <!-- submit button -->
+                <div class="formSubmit">
+                    <input class="submit" type="submit" value="Submit">
+                </div>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <nav class="footer__nav">
+            <ul class="nav__ul--pages">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="products.html">Products</a>
+                </li>
+                <li>
+                    <a href="#">Contact</li>
+            </ul>
+            <ul class="nav__ul--social">
+                <li>
+                    <img src="img/facebook.svg" alt="This is an icon that links to Facebook">
+                </li>
+                <li>
+                    <img src="img/twitter.svg" alt="This is an icon that links to Twitter">
+                </li>
+                <li>
+                    <img src="img/youtube.svg" alt="This is an icon that links to YouTube">
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
