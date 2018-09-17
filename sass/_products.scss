@@ -1,0 +1,18 @@
+/***
+PRODUCTS
+***/
+
+#root{
+    display: flex;
+    flex-flow:row;
+    width: 100%;
+  
+    .productCard{
+      width: 25%;
+  
+      .productCard__img{
+        width: 200px;
+        height:100px;
+      }
+    }
+  }

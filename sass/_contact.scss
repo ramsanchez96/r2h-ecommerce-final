@@ -1,0 +1,26 @@
+/***
+CONTACT
+***/
+
+.formSection {
+    text-align: center;
+    display: flex;
+    flex-flow:column;
+    width:100%;
+  
+    label{
+      width:60%;
+  
+      display: block;
+    }
+  
+    input{
+      border: 1px $secondary-color solid;
+      text-align: center;
+      margin: 0;
+    }
+  
+    textarea{
+      border: 1px $secondary-color solid
+    }
+  }

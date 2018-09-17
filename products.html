@@ -4,13 +4,27 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>FunWater</title>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <style>
+    #root {
+      display: flex;
+      /* flex-flow:column; */
+      max-width: 100%;
+    }
 
-  <title>React on an HTML page</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+    .productCard {
+      width: 100%;
+      text-align: center;
+    }
 
-  <link rel="stylesheet" href="css/styles.css">
-
+    .productCard__img {
+      width: 300px;
+      height: 300px;
+      ;
+    }
+  </style>
 </head>
 
 <body>
@@ -58,10 +72,14 @@
       </ul>
     </nav>
   </footer>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
   <script type="text/babel">
+
+  // import './css/styles.css';
   
   class Greeting extends React.Component {
 
@@ -70,13 +88,17 @@
 
         this.state = {
           waters: [],
-          hasWaters: false
+          hasWaters: false,
+          filteredWaters:[],
+          showFlavored: false,
+          shaowUnflavored: false,
+          showInStock: false
         };
         this.callback = this.callback.bind(this);
       }
 
       componentDidMount(){
-        fetch('https://api.jsonbin.io/b/5b9b0db70fbf2833e2251341')
+        fetch('https://api.jsonbin.io/b/5b9c009f20f1643378591411')
         .then((response) => {
           return response.json();
         })
@@ -86,31 +108,81 @@
             hasWaters: true
           })
         })
-      }
+      };
 
       callback(el){
         return <ProductCard info={el} key={el.productId}/>
+      };
+
+      handleShowFlavored = (el) =>{
+        this.setState({
+          showFlavored: true
+        })
+      };
+
+      handleShowUnflavored = (el) =>{
+        this.setState({
+          showUnflavored: true
+        })
+      };
+
+      handleShowInStock = (el) =>{
+        this.setState({
+          showInStock: true
+        })
+      };
+
+      handleClick = () => {
+        console.log(this.state.filteredWaters.length);
+        if(this.state.showFlavored === true){
+            this.setState({
+              filteredWaters: this.state.waters.filter(water => water.flavored === true)
+            });
+        } else if(this.state.showUnflavored === true){
+          this.setState({
+              filteredWaters: this.state.waters.filter(water => water.flavored === false)
+            });
+        } else if(this.state.showInStock === true){
+          this.setState({
+            filteredWaters: this.state.waters.filter(water => water.flavored === 'In Stock')
+          });
+        }
+
       }
 
       render() {
-        if(this.state.hasWaters === false) {
-            return null
+          if(this.state.hasWaters === false) {
+              return null
           }
-        return (
-          <div>
-            {this.state.waters.map(this.callback)}
-          </div>
-        );
+            return (
+              <div>
+                <h2>Filter By:</h2>
+                <form>
+                  <label for="showFlavored">Show Flavored Waters:</label>
+                  <input type="radio" checked={this.state.showFlavored} onChange={this.handleShowFlavored} id="showFlavored" name="filterProducts"/>
+                  <label for="showUnflavored">Show Unflavored Waters:</label>
+                  <input type="radio" checked={this.state.showUnflavored} onChange={this.handleShowUnflavored} id="showUnflavored" name="filterProducts"/>
+                  <label for="showInStock">Show Only Items Instock:</label>
+                  <input type="radio" checked={this.state.showInStock} onChange={this.handleShowInStock} name="filterProducts" />
+                  <button onClick={this.handleClick}>Filter Products</button>
+                </form>
+                {this.state.waters.map(this.callback)}
+              </div>  
+          );
+        }
     }
-  }
+
 
   function ProductCard(props){
     return(
       <div>
-        <p>{props.info.title}</p>
-        <p>{props.info.price}</p>
-        <p>{props.info.description}</p>
-        <img src='./img/lemon.png' alt="product images" />
+        <div className="productCard">
+          <h3>{props.info.title}</h3>
+          <p>{props.info.brand}</p>
+          <p>{props.info.description}</p>
+          <p>${props.info.price}</p>
+          <img src={props.info.productImages} alt={props.info.description} className="productCard__img"/>
+        </div>
       </div>
     );
   }
