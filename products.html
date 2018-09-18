@@ -90,22 +90,21 @@
           waters: [],
           hasWaters: false,
           filteredWaters:[],
-          showFlavored: false,
-          shaowUnflavored: false,
-          showInStock: false
+          shoeFilterPrice: false
         };
         this.callback = this.callback.bind(this);
       }
 
       componentDidMount(){
-        fetch('https://api.jsonbin.io/b/5b9c009f20f1643378591411')
+        fetch('https://api.jsonbin.io/b/5b9fe72120f16433785a1e7b')
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           this.setState({
             waters: data.products,
-            hasWaters: true
+            hasWaters: true,
+            filteredWaters: data.products
           })
         })
       };
@@ -114,60 +113,93 @@
         return <ProductCard info={el} key={el.productId}/>
       };
 
-      handleShowFlavored = (el) =>{
-        this.setState({
-          showFlavored: true
-        })
-      };
 
-      handleShowUnflavored = (el) =>{
+      handleFilterPrice = () => {
         this.setState({
-          showUnflavored: true
+          showFilterPrice: true
         })
-      };
+      }
 
-      handleShowInStock = (el) =>{
-        this.setState({
-          showInStock: true
-        })
-      };
+      handleClick = (e) => {
+        e.preventDefault();
+        let productTypeValue = document.getElementById('filterProductType').value;
+        let productPriceValue = document.getElementById('filterProductPrice').value;
 
-      handleClick = () => {
-        console.log(this.state.filteredWaters.length);
-        if(this.state.showFlavored === true){
-            this.setState({
-              filteredWaters: this.state.waters.filter(water => water.flavored === true)
-            });
-        } else if(this.state.showUnflavored === true){
-          this.setState({
-              filteredWaters: this.state.waters.filter(water => water.flavored === false)
-            });
-        } else if(this.state.showInStock === true){
-          this.setState({
-            filteredWaters: this.state.waters.filter(water => water.flavored === 'In Stock')
+        let productArray = this.state.waters;
+
+        if(productTypeValue !== '--'){
+          productArray = productArray.filter( el => {
+            if(productTypeValue === 'flavoredWaters'){
+              return el.flavored;
+            }else if(productTypeValue === 'unflavoredWaters'){
+              return !el.flavored;
+            }
           });
-        }
 
+        if(productPriceValue !== '--'){
+          productArray = productArray.filter(el => {
+          var minmax = productPriceValue.split("-");
+          var min = parseInt(minmax[0]);
+          if(minmax.length === 2){
+            var max = parseInt(minmax[1]);
+            if(el.price >= min && el.price <=max) {
+              return true;
+            }else{
+              return false;
+            }
+          }
+          if(el.price >= min) {
+            return true;
+          } else{
+            return false;
+          }
+        });
+      }
+          
+          this.setState({
+            filteredWaters: productArray
+          })
+        }   
+
+
+        // if(productTypeValue === 'flavoredWaters'){
+        //     this.setState({
+        //       filteredWaters: this.state.waters.filter(water => water.flavored === true)
+        //     }); 
+        // } else if(productTypeValue === 'unflavoredWaters'){
+        //   this.setState({
+        //       filteredWaters: this.state.waters.filter(water => water.flavored === false)
+        //     });
+        // }
       }
 
       render() {
+
           if(this.state.hasWaters === false) {
               return null
-          }
-            return (
-              <div>
-                <h2>Filter By:</h2>
-                <form>
-                  <label for="showFlavored">Show Flavored Waters:</label>
-                  <input type="radio" checked={this.state.showFlavored} onChange={this.handleShowFlavored} id="showFlavored" name="filterProducts"/>
-                  <label for="showUnflavored">Show Unflavored Waters:</label>
-                  <input type="radio" checked={this.state.showUnflavored} onChange={this.handleShowUnflavored} id="showUnflavored" name="filterProducts"/>
-                  <label for="showInStock">Show Only Items Instock:</label>
-                  <input type="radio" checked={this.state.showInStock} onChange={this.handleShowInStock} name="filterProducts" />
-                  <button onClick={this.handleClick}>Filter Products</button>
-                </form>
-                {this.state.waters.map(this.callback)}
-              </div>  
+          };
+
+          return (
+            <div>
+              <h2>Filter By:</h2>
+              <form onSubmit={this.handleClick}>
+              <label>Type-</label>
+                <select id="filterProductType">
+                  <option value="--">--</option>
+                  <option value="flavoredWaters">Flavored Waters</option>
+                  <option value="unflavoredWaters">Unflavored Waters</option>
+                </select>
+                <label>Price-</label>
+                <select id="filterProductPrice">
+                  <option value="--">--</option>
+                  <option value="0-5">$0.00 - $5</option>
+                  <option value="6-10">$6.00 - $10.00</option>
+                  <option value="11-25">$11.00 - $25.00</option>
+                </select>
+                <input type='submit' value="Filter"></input>
+              </form>
+              {this.state.filteredWaters.map(this.callback)}
+            </div>  
           );
         }
     }

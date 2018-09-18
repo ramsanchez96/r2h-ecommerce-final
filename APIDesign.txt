@@ -1,0 +1,5 @@
+POST::funwater.com/prdoucts  =  Inserts new product onto the page.
+GET::funwater.com/products = Returns json with all product information .
+GET::funwater.com/products/<productID>  =  Returns json with the information from that specific products.
+PUT::funwater.com/products/<productID>  =  Updates information for specified product.
+DELETE::funwater.com/products/<productID>  =  Removes the product with that ID from the data.
