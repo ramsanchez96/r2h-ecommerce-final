@@ -5,7 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>FunWater</title>
+  <title>Bubbly</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Nunito" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
   <style>
     #root {
@@ -30,7 +31,7 @@
 <body>
   <section>
     <header class="header">
-      <h1 class="header__heading">FunWater</h1>
+      <h1 class="header__heading">Bubbly</h1>
       <nav class="header__nav">
         <ul>
           <li>
@@ -89,10 +90,8 @@
         this.state = {
           waters: [],
           hasWaters: false,
-          filteredWaters:[],
-          shoeFilterPrice: false
+          filteredWaters:[]
         };
-        this.callback = this.callback.bind(this);
       }
 
       componentDidMount(){
@@ -109,18 +108,11 @@
         })
       };
 
-      callback(el){
+      callback = (el) => {
         return <ProductCard info={el} key={el.productId}/>
       };
 
-
-      handleFilterPrice = () => {
-        this.setState({
-          showFilterPrice: true
-        })
-      }
-
-      handleClick = (e) => {
+      handleSubmit = (e) => {
         e.preventDefault();
         let productTypeValue = document.getElementById('filterProductType').value;
         let productPriceValue = document.getElementById('filterProductPrice').value;
@@ -135,6 +127,7 @@
               return !el.flavored;
             }
           });
+        }
 
         if(productPriceValue !== '--'){
           productArray = productArray.filter(el => {
@@ -148,6 +141,7 @@
               return false;
             }
           }
+
           if(el.price >= min) {
             return true;
           } else{
@@ -171,7 +165,7 @@
         //       filteredWaters: this.state.waters.filter(water => water.flavored === false)
         //     });
         // }
-      }
+      
 
       render() {
 
@@ -182,7 +176,7 @@
           return (
             <div>
               <h2>Filter By:</h2>
-              <form onSubmit={this.handleClick}>
+              <form onSubmit={this.handleSubmit}>
               <label>Type-</label>
                 <select id="filterProductType">
                   <option value="--">--</option>
@@ -207,14 +201,12 @@
 
   function ProductCard(props){
     return(
-      <div>
-        <div className="productCard">
-          <h3>{props.info.title}</h3>
-          <p>{props.info.brand}</p>
-          <p>{props.info.description}</p>
-          <p>${props.info.price}</p>
-          <img src={props.info.productImages} alt={props.info.description} className="productCard__img"/>
-        </div>
+      <div className="productCard">
+        <h3>{props.info.title}</h3>
+        <p>{props.info.brand}</p>
+        <p>{props.info.description}</p>
+        <p>${props.info.price}</p>
+        <img src={props.info.productImages} alt={props.info.description} className="productCard__img"/>
       </div>
     );
   }

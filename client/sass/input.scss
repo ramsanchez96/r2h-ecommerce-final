@@ -1,0 +1,85 @@
+// $primary-color: #3bb9ff;
+// $secondary-color: #f87431;
+// $tertiary-color: #fff;
+
+// @import '_header';
+// @import '_home';
+// @import '_products';
+// @import '_contact';
+
+$primary-color: #fff;
+$secondary-color: #0377e4;
+$nunito: "Nunito", sans-serif;
+$amatic_sc: "Amatic SC", cursive;
+
+@import "_reset";
+
+.header {
+  background-color: $primary-color;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 20px;
+
+  .header__heading {
+    width: 100%;
+    text-align: center;
+    margin: auto auto 20px auto;
+    color: $secondary-color;
+    font-family: $amatic_sc;
+    font-size: 50px;
+  }
+
+  .header__nav {
+    width: 100%;
+
+    ul {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      justify-content: space-evenly;
+      margin: 0;
+
+      a {
+        text-decoration: none;
+        color: $secondary-color;
+        font-size: 25px;
+        font-family: $nunito;
+        // border: 1px $secondary-color solid;
+        padding: 5px;
+        // border-radius: 5px;
+      }
+    }
+  }
+}
+
+.slider {
+    width: 100%;
+    margin: 0 0;
+
+    img {
+      width: 100%;
+      // height: 280px;
+      // height: 500px;
+    }
+  }
+
+  .aboutParagraph {
+    margin: 10px 15px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column;
+    color: $secondary-color;
+    // box-shadow: 0 0 100px 0 rgba(59, 185, 255, 0.5);
+  
+    .aboutParagraph__heading {
+      align-self: center;
+      margin: 10px 0;
+      font-family: $amatic_sc;
+      font-size:40px;
+    }
+  
+    .aboutParagraph__paragraph {
+      margin: 5px;
+    }
+  }
