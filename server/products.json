@@ -1,0 +1,119 @@
+[
+  {
+    "productId": 1,
+    "title": "Pure - La Croix 24 pack",
+    "description": "Pure: crisp, clean, and clear, the blue can is pure, our only unflavored sparkling.",
+    "price": 19.99,
+    "brand": "LaCroix",
+    "flavored": false,
+    "productImages": "img/pure.png"
+  },
+  {
+    "productId": 2,
+    "title": "Lime - La Croix 10 pack",
+    "description": "Lime: is as good as it looks, always a crowd pleaser.",
+    "price": 9.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/lime.png"
+  },
+  {
+    "productId": 3,
+    "title": "Lemon - La Croix",
+    "description": "Lemon: tastes better as a sparkling water, no seeds or soggy fruit floater.",
+    "price": 1.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/lemon.png"
+  },
+  {
+    "productId": 4,
+    "title": "Orange - La Croix",
+    "description": "Orange: the more things change the more they stay the same as this tangy flavor is a fan favorite!",
+    "price": 1.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/orange.png"
+  },
+  {
+    "productId": 5,
+    "title": "Berry - La Croix",
+    "description": "Berry: hopefully you’re switching to sparkling because it’s berry delicious!",
+    "price": 1.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/berry.png"
+  },
+  {
+    "productId": 6,
+    "title": "Cran-Raspberry - La Croix",
+    "description": "Cran-Raspberry: a mixture of two great tastes that’s berry delightful with nothing artificial.",
+    "price": 1.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/cran-raspberry.png"
+  },
+  {
+    "productId": 7,
+    "title": "SmartWater Sparkling",
+    "description": "SmartWater sparkling will deliver a refreshing combination of pure sparkling taste, carbonation, vapor distillation and electrolytes",
+    "price": 2.99,
+    "brand": "SmartWater",
+    "flavored": false,
+    "productImages": "img/smartwater.jpg"
+  },
+  {
+    "productId": 8,
+    "title": "Grapefruit - SpindDrift Sparkling",
+    "description": "Bright, tangy Spindrift Grapefruit Sparkling Water tastes unique: lightly carbonated, slightly pulpy, and with a fuller flavor than regular sparkling water and seltzer",
+    "price": 0.8,
+    "brand": "Spindrift",
+    "flavored": true,
+    "productImages": "img/spindrift.jpg"
+  },
+  {
+    "productId": 9,
+    "title": "Pelligrino - Sparkling Water 24 Pack",
+    "description": "Sparkling water imported from Italy",
+    "price": 24.99,
+    "brand": "Pelligrino",
+    "flavored": false,
+    "productImages": "img/pelligrino.png"
+  },
+  {
+    "productId": 10,
+    "title": "Mango - LaCroix",
+    "description": "Mango: another new flavor for 2014, mangos are green on the outside with a slightly red hue on top when ripe, thus the can colors.",
+    "price": 1.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/mango.png"
+  },
+  {
+    "productId": 11,
+    "title": "Apricot - LaCroix 24 pack",
+    "description": "Apricot: is a 2014 new addition to the family which brings a never-been-done-before flavor to the sparkling water aisle!",
+    "price": 15.99,
+    "brand": "LaCroix",
+    "flavored": true,
+    "productImages": "img/apricot.png"
+  },
+  {
+    "productId": 12,
+    "title": "Pure - LaCroix 12 pack",
+    "description": "Pure: crisp, clean, and clear, the blue can is pure, our only unflavored sparkling.",
+    "price": 9,
+    "brand": "LaCroix",
+    "flavored": false,
+    "productImages": "img/pure.png"
+  },
+  {
+    "productId": 13,
+    "title": "Pure - LaCroix",
+    "description": "Pure: crisp, clean, and clear, the blue can is pure, our only unflavored sparkling.",
+    "price": 1.99,
+    "brand": "LaCroix",
+    "flavored": false,
+    "productImages": "img/pure.png"
+  }
+]

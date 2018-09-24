@@ -1,0 +1,22 @@
+{
+  "name": "r2h-ecommerce-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramsanchez96/r2h-ecommerce-final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramsanchez96/r2h-ecommerce-final/issues"
+  },
+  "homepage": "https://github.com/ramsanchez96/r2h-ecommerce-final#readme",
+  "dependencies": {
+    "mongoose": "^5.2.16"
+  }
+}
